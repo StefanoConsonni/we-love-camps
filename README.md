@@ -18,7 +18,7 @@ This project is created with:
 - CSS
 - BOOTSTRAP
 - JAVASCRIPT
-- EJS library
+- EJS
 - NODE JS
 - EXPRESS
 - MONGO DB
