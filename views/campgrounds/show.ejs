@@ -1,6 +1,9 @@
 <% layout("layouts/boilerplate") %>
 <h1><%= campground.title %></h1>
 <h2><%= campground.location %></h2>
+<!-- <img class="img-fluid" src="https://source.unsplash.com/random/?campground#" alt="" /> -->
+<img class="img-fluid" src="https://source.unsplash.com/random/300x300?campground#" <% + new Date().getTime() %> alt="" />
+<p><%= campground.description %></p>
 <div>
 	<a href="/campgrounds/<%= campground._id %>/edit">Edit</a>
 </div>
