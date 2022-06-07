@@ -1,7 +1,7 @@
 <% layout("layouts/boilerplate") %>
 
-<div class="row">
-	<div class="col-6 offset-3">
+<div class="row mb-4">
+	<div class="col-6">
 		<div class="card">
 			<img src="<%= campground.image %>" class="card-img-top img-fluid" alt="image of a campground" />
 			<div class="card-body">
@@ -20,7 +20,12 @@
 			</div>
 		</div>
 
-		<h3 class="mt-4">Leave a Review</h3>
+		<!-- <div class="mt-3 mb-5">
+			<a href="/campgrounds">Go Back</a>
+		</div> -->
+	</div>
+	<div class="col-6">
+		<h4>Leave a Review</h4>
 		<form action="/campgrounds/<%= campground._id %>/reviews" method="POST" class="needs-validation" novalidate>
 			<div class="mb-3">
 				<label class="form-label" for="rating">Rating</label>
@@ -32,8 +37,15 @@
 			</div>
 			<button class="btn btn-success">Submit</button>
 		</form>
-		<div class="mt-3 mb-5">
-			<a href="/campgrounds">Go Back</a>
+
+		<h4 class="mt-5">Reviews</h4>
+		<% for(const review of campground.reviews) { %>
+		<div class="card mb-3">
+			<div class="card-body">
+				<h5 class="card-title">Rating: <%= review.rating %></h5>
+				<p class="card-text">Review: <%= review.body %></p>
+			</div>
 		</div>
+		<% } %>
 	</div>
 </div>
