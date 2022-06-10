@@ -3,6 +3,7 @@ const path = require("path");
 const port = 3000;
 const mongoose = require("mongoose");
 const ejsMate = require("ejs-mate");
+const session = require("express-session");
 const Joi = require("joi");
 const ExpressError = require("./utils/ExpressError");
 const sassMiddleware = require("node-sass-middleware");
@@ -34,6 +35,19 @@ app.use(
 		sourceMap: true,
 	})
 );
+
+const sessionConfig = {
+	secret: "thisshouldbeabettersecret",
+	resave: false,
+	saveUninitialized: true,
+	cookie: {
+		httpOnly: true,
+		// milliseconds * minutes * hour * day * week
+		expires: Date.now() + 1000 * 60 * 60 * 24 * 7,
+		maxAge: 1000 * 60 * 60 * 24 * 7,
+	},
+};
+app.use(session(sessionConfig));
 
 app.get("/", (req, res) => {
 	res.render("home");
