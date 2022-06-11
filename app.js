@@ -4,7 +4,7 @@ const port = 3000;
 const mongoose = require("mongoose");
 const ejsMate = require("ejs-mate");
 const session = require("express-session");
-const Joi = require("joi");
+const flash = require("connect-flash");
 const ExpressError = require("./utils/ExpressError");
 const sassMiddleware = require("node-sass-middleware");
 const methodOverride = require("method-override");
@@ -35,7 +35,6 @@ app.use(
 		sourceMap: true,
 	})
 );
-
 const sessionConfig = {
 	secret: "thisshouldbeabettersecret",
 	resave: false,
@@ -48,19 +47,25 @@ const sessionConfig = {
 	},
 };
 app.use(session(sessionConfig));
-
-app.get("/", (req, res) => {
-	res.render("home");
+app.use(flash());
+app.use((req, res, next) => {
+	res.locals.success = req.flash("success");
+	res.locals.error = req.flash("error");
+	next();
 });
 
 app.use("/campgrounds", campgrounds);
 app.use("/campgrounds/:id/reviews", reviews);
 
+app.get("/", (req, res) => {
+	res.render("home");
+});
+
 app.all("*", (req, res, next) => {
 	next(new ExpressError("Page Not Found", 404));
 });
 
-app.use((err, req, res, next) => {
+app.use((err, req, res) => {
 	const { statusCode = 500 } = err;
 	if (!err.message) err.message = "Something went wrong!";
 	res.status(statusCode).render("error", { err });
