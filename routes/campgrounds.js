@@ -4,6 +4,7 @@ const catchAsync = require("../utils/catchAsync");
 const ExpressError = require("../utils/ExpressError");
 const Campground = require("../models/campground");
 const { campgroundSchema } = require("../schemas");
+const { isLoggedIn } = require("../middleware");
 
 const validateCampground = (req, res, next) => {
 	const { error } = campgroundSchema.validate(req.body);
@@ -23,16 +24,13 @@ router.get(
 	})
 );
 
-router.get("/new", (req, res) => {
-	if (!req.isAuthenticated()) {
-		req.flash("error", "You must be signed in!");
-		return res.redirect("/login");
-	}
+router.get("/new", isLoggedIn, (req, res) => {
 	res.render("campgrounds/new");
 });
 
 router.post(
 	"/",
+	isLoggedIn,
 	validateCampground,
 	catchAsync(async (req, res) => {
 		const campground = new Campground(req.body.campground);
@@ -44,6 +42,7 @@ router.post(
 
 router.get(
 	"/:id",
+	isLoggedIn,
 	catchAsync(async (req, res) => {
 		const campground = await Campground.findById(req.params.id).populate("reviews");
 		if (!campground) {
