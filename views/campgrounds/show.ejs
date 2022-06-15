@@ -10,6 +10,7 @@
 			</div>
 			<ul class="list-group list-group-flush">
 				<li class="list-group-item text-muted"><%= campground.location %></li>
+				<li class="list-group-item">Submitted by <span class="fw-bold"><%= campground.author.username %></span></li>
 				<li class="list-group-item">$<%= campground.price %> per night</li>
 			</ul>
 			<div class="card-body">
