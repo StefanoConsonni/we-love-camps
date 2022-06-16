@@ -1,16 +1,16 @@
-# We Love Camps
+## We Love Camps
 
-## Table of contents
+### Table of contents
 
 - [General info](#general-info)
 - [Technologies](#technologies)
 - [Setup](#setup)
 
-## General info
+### General info
 
 A web app that allows users to find and review campgrounds. I'm building it using Express.js, ejs templating, MongoDB, Mongoose, passport.js, Bootstrap and few other libraries.
 
-## Technologies
+### Technologies
 
 This project is created with:
 
@@ -18,23 +18,21 @@ This project is created with:
 - CSS
 - BOOTSTRAP
 - JAVASCRIPT
-- EJS
+- EJS TEMPLATE ENGINE
 - NODE JS
 - EXPRESS
 - MONGO DB
 - MONGOOSE
 
-## Setup
-
-<!-- You can open the website in your local development server using the Live Server VS Code extension. -->
+### Setup
 
 In the project directory, you can run:
 
-#### `npm install`
+##### `npm install`
 
 To install the dependencies package.
 
-#### `nodemon app.js`
+##### `nodemon app.js`
 
 Runs the app in the development mode (make sure to have the [nodemon](https://www.npmjs.com/package/nodemon) tool installed globally).<br>
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
