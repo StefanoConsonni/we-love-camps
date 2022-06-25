@@ -37,5 +37,5 @@ To install the dependencies package.
 Runs the app in the development mode (make sure to have the [nodemon](https://www.npmjs.com/package/nodemon) tool installed globally).<br>
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br>
+The page will reload if you make any edits.<br>
 You will also see any lint errors in the console.
