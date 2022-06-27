@@ -22,11 +22,9 @@
 			</div>
 			<% } %>
 		</div>
-
-		<!-- <div class="mt-3 mb-5">
-			<a href="/campgrounds">Go Back</a>
-		</div> -->
 	</div>
+
+	<% if(currentUser) { %>
 	<div class="col-6">
 		<h4>Leave a Review</h4>
 		<form action="/campgrounds/<%= campground._id %>/reviews" method="POST" class="needs-validation" novalidate>
@@ -54,4 +52,5 @@
 		</div>
 		<% } %>
 	</div>
+	<% } %>
 </div>
