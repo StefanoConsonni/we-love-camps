@@ -3,10 +3,25 @@
 
 <div class="row mb-4">
 	<div class="col-6">
+		<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+			<div class="carousel-inner">
+				<% campground.images.forEach((img, index) => { %>
+				<div class="carousel-item <%= img === 0 ? "active" : "" %>">
+					<img src="<%= img.url %>" class="d-block w-100" alt="" />
+				</div>
+				<% }); %>
+			</div>
+			<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				<span class="visually-hidden">Previous</span>
+			</button>
+			<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+				<span class="carousel-control-next-icon" aria-hidden="true"></span>
+				<span class="visually-hidden">Next</span>
+			</button>
+		</div>
+
 		<div class="card">
-			<% for(let img of campground.images) { %>
-			<img src="<%= img.url %>" class="card-img-top img-fluid" alt="image of a campground" />
-			<% } %>
 			<div class="card-body">
 				<h5 class="card-title"><%= campground.title %></h5>
 				<p class="card-text"><%= campground.description %></p>
