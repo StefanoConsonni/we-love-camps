@@ -2,7 +2,7 @@
 // $primary: #c99827;
 // $info: #2c7f96;
 
-//Generate CSS classes for all shades of all Bootstrap colours:
+//Generate CSS classes for all shades of Bootstrap colours:
 @import "../node_modules/bootstrap/scss/functions";
 @import "../node_modules/bootstrap/scss/variables";
 @import "../node_modules/bootstrap/scss/utilities";
@@ -18,6 +18,7 @@ $blues: (
 	"800": $blue-800,
 	"900": $blue-900,
 ) !default;
+
 $indigos: (
 	"100": $indigo-100,
 	"200": $indigo-200,
@@ -29,6 +30,7 @@ $indigos: (
 	"800": $indigo-800,
 	"900": $indigo-900,
 ) !default;
+
 $purples: (
 	"100": $purple-100,
 	"200": $purple-200,
@@ -40,6 +42,7 @@ $purples: (
 	"800": $purple-800,
 	"900": $purple-900,
 ) !default;
+
 $pinks: (
 	"100": $pink-100,
 	"200": $pink-200,
@@ -51,6 +54,7 @@ $pinks: (
 	"800": $pink-800,
 	"900": $pink-900,
 ) !default;
+
 $reds: (
 	"100": $red-100,
 	"200": $red-200,
@@ -62,6 +66,7 @@ $reds: (
 	"800": $red-800,
 	"900": $red-900,
 ) !default;
+
 $oranges: (
 	"100": $orange-100,
 	"200": $orange-200,
@@ -73,6 +78,7 @@ $oranges: (
 	"800": $orange-800,
 	"900": $orange-900,
 ) !default;
+
 $yellows: (
 	"100": $yellow-100,
 	"200": $yellow-200,
@@ -84,6 +90,7 @@ $yellows: (
 	"800": $yellow-800,
 	"900": $yellow-900,
 ) !default;
+
 $greens: (
 	"100": $green-100,
 	"200": $green-200,
@@ -95,6 +102,7 @@ $greens: (
 	"800": $green-800,
 	"900": $green-900,
 ) !default;
+
 $teals: (
 	"100": $teal-100,
 	"200": $teal-200,
@@ -106,6 +114,7 @@ $teals: (
 	"800": $teal-800,
 	"900": $teal-900,
 ) !default;
+
 $cyans: (
 	"100": $cyan-100,
 	"200": $cyan-200,
