@@ -11,7 +11,6 @@
 				<label class="form-label" for="location">Location</label>
 				<input class="form-control" type="text" id="location" name="campground[location]" required />
 			</div>
-			<input type="file" name="image" id="" multiple />
 			<div class="mb-3">
 				<label class="form-label" for="price">Price per night</label>
 				<div class="input-group">
@@ -27,6 +26,10 @@
 						required
 					/>
 				</div>
+			</div>
+			<div class="mb-3">
+				<label class="form-label" for="image">Add Images</label>
+				<input type="file" id="image" name="image" class="form-control" multiple required />
 			</div>
 			<div class="mb-3">
 				<label class="form-label" for="description">Description</label>
