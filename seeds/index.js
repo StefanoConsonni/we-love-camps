@@ -17,6 +17,7 @@ const seedDB = async () => {
 		const random1000 = Math.floor(Math.random() * 1000);
 		const price = Math.floor(Math.random() * 20) + 10;
 		const camp = new Campground({
+			// Admin User ID
 			author: "62aa49d963bbe4f1e36233bb",
 			location: `${cities[random1000].city}, ${cities[random1000].state}`,
 			title: `${sample(descriptors)} ${sample(places)}`,
@@ -25,13 +26,17 @@ const seedDB = async () => {
 			description:
 				"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sit fugiat labore consequatur incidunt fugit officia a. Dignissimos officia, aut, perspiciatis quasi cupiditate, cum nemo harum in eligendi corrupti aperiam velit? Ratione dolore illum aperiam accusamus in reiciendis exercitationem eos unde voluptatem, ullam quidem blanditiis vel alias esse, facilis reprehenderit deserunt dolores harum laboriosam corporis necessitatibus eius repellendus? Quos, est aliquam.",
 			price: price,
+			geometry: {
+				type: "Point",
+				coordinates: [1.44, 43.6],
+			},
 			images: [
 				{
-					url: "https://res.cloudinary.com/stecons/image/upload/v1656610263/WeLoveCamps/kbvkcs12kk3dpy6km2zx.jpg",
+					url: "https://res.cloudinary.com/stecons/image/upload/v1657372667/WeLoveCamps/hmem3bcg0wuf8bv9joas.jpg",
 					filename: "WeLoveCamps/kbvkcs12kk3dpy6km2zx",
 				},
 				{
-					url: "https://res.cloudinary.com/stecons/image/upload/v1656610263/WeLoveCamps/fuwzkfvuyxfuohhbnici.jpg",
+					url: "https://res.cloudinary.com/stecons/image/upload/v1656710130/WeLoveCamps/v9j98shwniyapwbrz7ve.jpg",
 					filename: "WeLoveCamps/fuwzkfvuyxfuohhbnici",
 				},
 			],
