@@ -9,7 +9,7 @@
 				<div class="carousel-inner">
 					<% campground.images.forEach((img, index) => { %>
 					<div class="carousel-item <%= index === 0 ? "active" : "" %>">
-						<img src="<%= img.url %>" class="d-block w-100" alt="" />
+						<img src="<%= img.url %>" class="d-block w-100" alt="image of a campground" />
 					</div>
 					<% }); %>
 				</div>
@@ -90,4 +90,5 @@
 	const mapToken = "<%- process.env.MAPBOX_TOKEN %>";
 	const campground = <%- JSON.stringify(campground) %>;
 </script> 
+
 <script src="/javascripts/showPageMap.js"></script>
