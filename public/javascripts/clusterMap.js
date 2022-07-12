@@ -82,9 +82,8 @@ map.on("load", () => {
 	// the location of the feature, with
 	// description HTML from its properties.
 	map.on("click", "unclustered-point", (e) => {
+		const { popupMarkup } = e.features[0].properties;
 		const coordinates = e.features[0].geometry.coordinates.slice();
-		const mag = e.features[0].properties.mag;
-		const tsunami = e.features[0].properties.tsunami === 1 ? "yes" : "no";
 
 		// Ensure that if the map is zoomed out such that
 		// multiple copies of the feature are visible, the
@@ -93,7 +92,7 @@ map.on("load", () => {
 			coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
 		}
 
-		new mapboxgl.Popup().setLngLat(coordinates).setHTML(`magnitude: ${mag}<br>Was there a tsunami?: ${tsunami}`).addTo(map);
+		new mapboxgl.Popup().setLngLat(coordinates).setHTML(popupMarkup).addTo(map);
 	});
 
 	map.on("mouseenter", "clusters", () => {
