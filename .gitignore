@@ -1,7 +1,12 @@
 # Application specific files #
 node_modules
 .env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
 .sass-cache
+npm-debug.log*
 
 # Compiled source #
 *.com
@@ -40,3 +45,6 @@ Desktop.ini
 
 # Compiled Python files #
 *.pyc
+
+# Next.js
+/.next
