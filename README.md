@@ -8,7 +8,8 @@
 
 ### General info
 
-A web app that allows users to find and review campgrounds. I'm building it using Express.js, ejs templating, MongoDB, Mongoose, passport.js, Bootstrap and few other libraries.
+A web app that allows users to add, delete, edit and review campgrounds. It has user authentication, image uploads and embedded map functionalities.
+I built it using Express.js, ejs templating, MongoDB, Mongoose, Bootstrap, Passport.js, Mapbox and few other libraries.
 
 ### Technologies
 
@@ -20,9 +21,11 @@ This project is created with:
 - JAVASCRIPT
 - EJS TEMPLATE ENGINE
 - NODE JS
-- EXPRESS
+- EXPRESS.JS
 - MONGO DB
 - MONGOOSE
+- PASSPORT.JS
+- MAPBOX GL JS
 
 ### Setup
 
