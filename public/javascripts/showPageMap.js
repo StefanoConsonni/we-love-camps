@@ -1,7 +1,7 @@
 mapboxgl.accessToken = mapToken;
 const map = new mapboxgl.Map({
 	container: "map", // container ID
-	style: "mapbox://styles/mapbox/outdoors-v11", // style URL
+	style: "mapbox://styles/mapbox/light-v10", // style URL
 	center: campground.geometry.coordinates, // starting position [lng, lat]
 	zoom: 6, // starting zoom
 	projection: "globe", // display the map as a 3D globe
