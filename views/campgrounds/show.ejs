@@ -2,8 +2,8 @@
 <link rel="stylesheet" href="/css/stars.css" />
 
 <div class="row mb-4">
+
 	<div class="col-6">
-		<div id="map"></div>
 		<div class="card">
 			<div id="campgroundCarousel" class="carousel slide" data-bs-ride="carousel">
 				<div class="carousel-inner">
@@ -45,6 +45,7 @@
 	</div>
 
 	<div class="col-6">
+	<div id="map" class="mb-3"></div>
 		<% if(currentUser) { %>
 		<h4 class="mb-3">Leave a Review</h4>
 		<form action="/campgrounds/<%= campground._id %>/reviews" method="POST" class="needs-validation" novalidate>
