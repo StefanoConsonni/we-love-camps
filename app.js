@@ -16,11 +16,13 @@ const LocalStrategy = require("passport-local");
 const mongoSanitize = require("express-mongo-sanitize");
 const helmet = require("helmet");
 const User = require("./models/user");
+// const dbUrl = process.env.DB_URL;
 
 const campgroundsRoutes = require("./routes/campgrounds");
 const reviewsRoutes = require("./routes/reviews");
 const usersRoutes = require("./routes/users");
 
+// mongoose.connect(dbUrl);
 mongoose.connect("mongodb://localhost:27017/we-love-camps");
 mongoose.connection.on("error", console.error.bind(console, "connection error:"));
 mongoose.connection.once("open", () => {
@@ -45,7 +47,7 @@ app.use(
 		sourceMap: true,
 	})
 );
-// This disables the `contentSecurityPolicy` middleware but keeps the rest
+
 app.use(
 	helmet({
 		contentSecurityPolicy: false,
