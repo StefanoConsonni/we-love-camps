@@ -14,6 +14,7 @@ const methodOverride = require("method-override");
 const passport = require("passport");
 const LocalStrategy = require("passport-local");
 const mongoSanitize = require("express-mongo-sanitize");
+const helmet = require("helmet");
 const User = require("./models/user");
 
 const campgroundsRoutes = require("./routes/campgrounds");
@@ -42,6 +43,13 @@ app.use(
 		dest: path.join(__dirname, "public/css"),
 		indentedSyntax: false, // true = .sass  false = .scss
 		sourceMap: true,
+	})
+);
+// This disables the `contentSecurityPolicy` middleware but keeps the rest
+app.use(
+	helmet({
+		contentSecurityPolicy: false,
+		crossOriginEmbedderPolicy: false,
 	})
 );
 
