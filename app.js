@@ -46,13 +46,14 @@ app.use(
 );
 
 const sessionConfig = {
-	secret: "thisshouldbeabettersecret",
+	name: process.env.SESSION_NAME,
+	secret: process.env.SESSION_SECRET,
 	resave: false,
 	saveUninitialized: true,
 	cookie: {
 		httpOnly: true,
-		// milliseconds * minutes * hour * day * week
-		expires: Date.now() + 1000 * 60 * 60 * 24 * 7,
+		// secure: true,
+		expires: Date.now() + 1000 * 60 * 60 * 24 * 7, // milliseconds * minutes * hour * day * week
 		maxAge: 1000 * 60 * 60 * 24 * 7,
 	},
 };
