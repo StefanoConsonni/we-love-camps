@@ -5,8 +5,9 @@ if (process.env.NODE_ENV !== "production") {
 const express = require("express");
 const path = require("path");
 const mongoose = require("mongoose");
-const ejsMate = require("ejs-mate");
 const session = require("express-session");
+const MongoStore = require("connect-mongo");
+const ejsMate = require("ejs-mate");
 const flash = require("connect-flash");
 const ExpressError = require("./utils/ExpressError");
 const sassMiddleware = require("node-sass-middleware");
@@ -16,14 +17,13 @@ const LocalStrategy = require("passport-local");
 const mongoSanitize = require("express-mongo-sanitize");
 const helmet = require("helmet");
 const User = require("./models/user");
-// const dbUrl = process.env.DB_URL;
+const dbUrl = process.env.DB_URL || "mongodb://localhost:27017/yelp-camp";
 
 const campgroundsRoutes = require("./routes/campgrounds");
 const reviewsRoutes = require("./routes/reviews");
 const usersRoutes = require("./routes/users");
 
-// mongoose.connect(dbUrl);
-mongoose.connect("mongodb://localhost:27017/we-love-camps");
+mongoose.connect(dbUrl);
 mongoose.connection.on("error", console.error.bind(console, "connection error:"));
 mongoose.connection.once("open", () => {
 	console.log("Database connected");
@@ -55,7 +55,20 @@ app.use(
 	})
 );
 
+const store = MongoStore.create({
+	mongoUrl: dbUrl,
+	touchAfter: 24 * 60 * 60, // time period in seconds (24 hours)
+	crypto: {
+		secret: process.env.SESSION_SECRET,
+	},
+});
+
+store.on("error", (err) => {
+	console.log("SESSION STORE ERROR", err);
+});
+
 const sessionConfig = {
+	store: store,
 	name: process.env.SESSION_NAME,
 	secret: process.env.SESSION_SECRET,
 	resave: false,
