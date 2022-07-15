@@ -65,7 +65,6 @@ const store = MongoStore.create({
 		secret: sessionSecret,
 	},
 });
-
 store.on("error", (err) => {
 	console.log("SESSION STORE ERROR", err);
 });
@@ -117,6 +116,7 @@ app.use((err, req, res) => {
 	res.status(statusCode).render("error", { err });
 });
 
-app.listen(3000, () => {
-	console.log("Serving on port 3000!");
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
+	console.log(`Serving on port ${port}!`);
 });
