@@ -1,17 +1,17 @@
-## We Love Camps
+# We Love Camps
 
-### Table of contents
+## Table of contents
 
 - [General info](#general-info)
 - [Technologies](#technologies)
 - [Setup](#setup)
 
-### General info
+## General info
 
 A web app that allows users to add, delete, edit and review campgrounds. It has user authentication, image uploads and embedded map functionalities.
 I built it using Express.js, ejs templating, MongoDB, Mongoose, Bootstrap, Passport.js, Mapbox and few other libraries.
 
-### Technologies
+## Tech Stack
 
 This project is created with:
 
@@ -27,17 +27,21 @@ This project is created with:
 - PASSPORT.JS
 - MAPBOX GL JS
 
-### Setup
+## Setup
 
 In the project directory, you can run:
 
-#### `npm install`
+```bash
+npm install
+```
 
 To install the dependencies package.
 
-#### `nodemon app.js`
+```bash
+nodemon app.js
+```
 
-Runs the app in the development mode (make sure to have the [nodemon](https://www.npmjs.com/package/nodemon) tool installed globally).<br>
+Runs the app in development mode (make sure to have the [nodemon](https://www.npmjs.com/package/nodemon) tool installed globally).<br>
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make any edits.<br>
