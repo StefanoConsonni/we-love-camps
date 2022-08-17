@@ -3,7 +3,7 @@
 ## Table of contents
 
 - [General info](#general-info)
-- [Technologies](#technologies)
+- [Tech Stack](#tech-stack)
 - [Setup](#setup)
 
 ## General info
